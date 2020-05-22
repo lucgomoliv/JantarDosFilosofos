@@ -30,8 +30,6 @@ namespace JantarDosFilosofos
         static void comer(int idFilosofo, int[] garfos)
         {
             Random rnd = new Random();
-            int garfoEsquerdo = garfos[idFilosofo];
-            int garfoDireito = garfos[idFilosofo % 5];
 
             lock (garfos)
             {
