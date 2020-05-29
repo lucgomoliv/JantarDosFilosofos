@@ -20,8 +20,8 @@ namespace JantarDosFilosofos
         static void pensar(int idFilosofo)
         {
             Random rnd = new Random();
-            Console.WriteLine($"Filosofo {idFilosofo + 1} pensando...");
-            Thread.Sleep(rnd.Next() % 10000);
+            Console.WriteLine("Filosofo " + (idFilosofo + 1) + " pensando...");
+            Thread.Sleep(rnd.Next(100, 10000));
         }
 
         static void comer(int idFilosofo, int[] garfos)
@@ -29,14 +29,14 @@ namespace JantarDosFilosofos
             Random rnd = new Random();
             int posGarfoEsquerdo = idFilosofo;
             int posGarfoDireito = (idFilosofo + 1) % garfos.Length;
-            Console.WriteLine($"Filosofo {idFilosofo + 1} verificando os garfos!");
+            Console.WriteLine("Filosofo " + (idFilosofo + 1) + " verificando os garfos!");
             if (verficarGarfos(garfos, posGarfoEsquerdo, posGarfoDireito))
             {
-                Console.WriteLine($"Filosofo {idFilosofo + 1} comendo...");
-                Thread.Sleep(rnd.Next() % 10000);
+                Console.WriteLine("Filosofo " + (idFilosofo + 1) + " comendo...");
+                Thread.Sleep(rnd.Next(100, 10000));
                 garfos[posGarfoEsquerdo] = 1;
                 garfos[posGarfoDireito] = 1;
-                Console.WriteLine($"Filosofo {idFilosofo + 1} terminou de comer!");
+                Console.WriteLine("Filosofo " + (idFilosofo + 1) + " terminou de comer!");
             }
         }
 
